@@ -92,7 +92,6 @@ flutter:
     - family: Roboto
       fonts:
         - asset: assets/fonts/Roboto-Regular.ttf
-    - family: RobotoBold
       fonts:
         - asset: assets/fonts/Roboto-Bold.ttf
   assets:

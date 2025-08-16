@@ -1,19 +1,17 @@
-// File: part3_stream.dart
-Stream<String> messageStream() async* {
-  yield 'First message';
-  await Future.delayed(Duration(seconds: 1));
-  yield 'Second message';
-  await Future.delayed(Duration(seconds: 1));
-  yield 'Third message';
-}
-
-void listenToMessages() {
-  messageStream().listen((msg) {
-    print('New: $msg');
-  });
+// File: part3_streams.dart
+// Function that emits numbers 1 to 5 with 1-second delay
+Stream<int> numberStream() async* {
+  for (var i = 1; i <= 5; i++) {
+    yield i; // emit number
+    await Future.delayed(Duration(seconds: 3)); // wait 3 seconds
+  }
 }
 
 void main() {
-  listenToMessages();
-  print('Listening to messages...');
+  // Start listening to the stream
+  numberStream().listen((num) {
+    print('New: $num');
+  });
+
+  print('List of numbers...');
 }
